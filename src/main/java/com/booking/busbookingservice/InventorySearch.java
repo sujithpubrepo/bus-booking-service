@@ -1,9 +1,10 @@
-package com.inventory.businventoryservice;
+package com.booking.busbookingservice;
 
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+
 @Getter
 @Setter
 public class InventorySearch {

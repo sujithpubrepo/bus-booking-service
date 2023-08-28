@@ -8,11 +8,11 @@
         <version>2.7.15</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.inventory</groupId>
-    <artifactId>bus-inventory-service</artifactId>
+    <groupId>com.booking</groupId>
+    <artifactId>bus-booking-service</artifactId>
     <version>1.0.0</version>
-    <name>bus-inventory-service</name>
-    <description>bus-inventory-service</description>
+    <name>bus-booking-service</name>
+    <description>bus-booking-service</description>
     <properties>
         <java.version>11</java.version>
         <spring-cloud.version>2021.0.8</spring-cloud.version>
@@ -39,6 +39,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
