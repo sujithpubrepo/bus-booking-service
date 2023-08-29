@@ -21,7 +21,7 @@ public class Consumer {
     @Autowired
     private Producer producer;
 
-    @KafkaListener(topics = "inventory", groupId = "group_id")
+    @KafkaListener(topics = "booking", groupId = "group_id")
     public void consume(String message) throws IOException
     {
         logger.info("Consuming event");

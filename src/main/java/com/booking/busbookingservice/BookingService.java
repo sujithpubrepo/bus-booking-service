@@ -47,13 +47,13 @@ public class BookingService {
     public Inventory inventory(InventorySearch inventorySearch) {
         Mono<Inventory> paymentStatus = webClientBuilder.build().post().
                 uri(inventorylookup).
-                body(inventorySearch,InventorySearch.class).retrieve().bodyToMono(Inventory.class);
+                body(Mono.just(inventorySearch),InventorySearch.class).retrieve().bodyToMono(Inventory.class);
 
         return paymentStatus.block();
     }
 
     public Booking book(Inventory inventory) {
-        String bookingid ="INV"+(int)(Math.random()*100000);
+        String bookingid ="BOOK"+(int)(Math.random()*100000);
         Booking booking = new Booking();
         booking.setBookingid(bookingid);
         booking.setBusid(inventory.getBusid());
