@@ -120,7 +120,7 @@ public class BookingService {
         boolean isCancel = "CANCEL_INITIATED".equals(booking.getStatus());
         BookingDetails bookingDetails= new BookingDetails();
         bookingDetails.setBookingid(booking.getBookingid());
-        bookingDetails.setBookingtype(booking.getBookingtype());
+        bookingDetails.setBookingtype(isCancel? "CANCEL":booking.getBookingtype());
         bookingDetails.setNumberofseats(isCancel?-1*booking.getNumberofseats():booking.getNumberofseats());
         bookingDetails.setInventoryid(booking.getInventoryid());
         bookingDetails.setAmount(isCancel?-1*booking.getAmount():booking.getAmount());
