@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -28,5 +29,7 @@ public class Inventory {
 
     private String source;
     private String destination;
+
+    private List<Passenger> passengers;
 
 }

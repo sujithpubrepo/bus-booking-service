@@ -10,6 +10,7 @@ import reactor.core.publisher.Mono;
 
 import java.awt.print.Book;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,6 +19,9 @@ public class BookingService {
 
     @Autowired
     private BookingRepository bookingRepository;
+
+    @Autowired
+    private PassengerRepository passengerRepository;
 
     @Autowired
     Producer producer;
@@ -69,6 +73,14 @@ public class BookingService {
         booking.setAmount(inventory.getPrice()*inventory.getNumberofseats());
         booking.setUserid(inventory.getUserid());
         bookingRepository.save(booking);
+
+        List<Passenger> list = new ArrayList<>();
+        for(Passenger p: inventory.getPassengers()){
+            p.setBookingid(bookingid);
+            p.setPassengerid("PAS"+(int)(Math.random()*100000));
+            list.add(p);
+        }
+        passengerRepository.saveAll(list);
 
         try {
             producer.sendBooking(getBookingDetails(booking));

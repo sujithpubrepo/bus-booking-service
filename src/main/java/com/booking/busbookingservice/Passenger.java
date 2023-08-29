@@ -20,8 +20,7 @@ public class Passenger {
     @Column(name = "age", nullable = false)
     private Integer age;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "bookingid", nullable = false)
-    private Booking bookingid;
+    @Column(name = "bookingid", nullable = false, length=10)
+    private String bookingid;
 
 }
