@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.booking</groupId>
     <artifactId>bus-booking-service</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <name>bus-booking-service</name>
     <description>bus-booking-service</description>
     <properties>
